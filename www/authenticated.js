@@ -1,3 +1,5 @@
+localStorage.clear()
+
 function init () {
   addListener(document.getElementById('gunForm'), 'submit', addLine)
 }

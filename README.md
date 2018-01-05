@@ -1,6 +1,8 @@
 # gun-restrict-examples
 
-Examples of how to restrict put with [GUN](https://github.com/amark/gun)
+Examples of how to restrict put and get with [GUN](https://github.com/amark/gun)
+
+The solutions are based on an answer from [stackoverflow](https://stackoverflow.com/questions/38598391/jwt-authentication-with-gundb)
 
 ## Setup
 

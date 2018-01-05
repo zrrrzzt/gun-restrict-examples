@@ -7,6 +7,7 @@
     "test": "standard",
     "restricted-put": "node gun-servers/server-gun-restricted-put",
     "unrestricted": "node gun-servers/server-gun-unrestricted",
+    "restricted": "node gun-servers/server-gun-restricted",
     "tunnel": "node tunnel",
     "start": "node www/server",
     "start-unauth": "node www/server-unauthenticated"
