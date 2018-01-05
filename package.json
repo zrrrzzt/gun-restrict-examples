@@ -1,0 +1,31 @@
+{
+  "name": "gun-restrict-examples",
+  "version": "1.0.0",
+  "description": "Examples of how to restrict put and get with GUN",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard",
+    "gun-restricted-put": "node server-gun-restricted-put",
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zrrrzzt/gun-restrict-examples.git"
+  },
+  "keywords": [],
+  "author": "Geir Gåsodden <geir.gasodden@pythonia.no> (https://github.com/zrrrzzt)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zrrrzzt/gun-restrict-examples/issues"
+  },
+  "homepage": "https://github.com/zrrrzzt/gun-restrict-examples#readme",
+  "dependencies": {
+    "dotenv": "4.0.0",
+    "finalhandler": "1.1.0",
+    "gun": "0.9.6",
+    "serve-static": "1.13.1"
+  },
+  "devDependencies": {
+    "standard": "10.0.3"
+  }
+}
