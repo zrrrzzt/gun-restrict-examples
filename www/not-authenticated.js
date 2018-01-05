@@ -2,20 +2,6 @@ function init () {
   addListener(document.getElementById('gunForm'), 'submit', addLine)
 }
 
-Gun.on('opt', function (ctx) {
-  if (ctx.once) {
-    return
-  }
-  ctx.on('out', function (msg) {
-    var to = this.to
-    // Adds headers for put
-    msg.headers = {
-      token: 'thisIsTheTokenForReals'
-    }
-    to.next(msg) // pass to next middleware
-  })
-})
-
 const gunUrl = `${tunnelUrl}/gun`
 const gun = Gun(gunUrl)
 

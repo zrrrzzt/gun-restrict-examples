@@ -5,6 +5,9 @@
 # Mac OS
 .DS_Store
 
+# GUN
+data.json
+
 # Logs
 logs
 *.log

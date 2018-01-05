@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "standard",
-    "gun-restricted-put": "node server-gun-restricted-put",
-    "start": "node server"
+    "restricted-put": "node gun-servers/server-gun-restricted-put",
+    "unrestricted": "node gun-servers/server-gun-unrestricted",
+    "tunnel": "node tunnel",
+    "start": "node www/server",
+    "start-unauth": "node www/server-unauthenticated"
   },
   "repository": {
     "type": "git",
@@ -20,9 +23,9 @@
   },
   "homepage": "https://github.com/zrrrzzt/gun-restrict-examples#readme",
   "dependencies": {
-    "dotenv": "4.0.0",
     "finalhandler": "1.1.0",
     "gun": "0.9.6",
+    "ngrok": "2.2.24",
     "serve-static": "1.13.1"
   },
   "devDependencies": {

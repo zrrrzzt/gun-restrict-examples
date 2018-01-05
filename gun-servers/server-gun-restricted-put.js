@@ -1,4 +1,4 @@
-const port = process.env.PORT || process.argv[2] || 8000
+const port = 8000
 const Gun = require('gun')
 
 function hasValidToken (msg) {
@@ -16,7 +16,10 @@ Gun.on('opt', function (ctx) {
     // restrict put
     if (msg.put) {
       if (hasValidToken(msg)) {
+        console.log('writing')
         to.next(msg)
+      } else {
+        console.log('not writing')
       }
     } else {
       to.next(msg)
@@ -29,14 +32,6 @@ const server = require('http').createServer((req, res) => {
   if (Gun.serve(req, res)) {
     return
   }
-
-  require('fs').createReadStream(require('path').join(__dirname, req.url)).on('error', function () { // static files!
-    res.writeHead(200, {'Content-Type': 'text/html'})
-    res.end(require('fs')
-    .readFileSync(require('path')
-    .join(__dirname, 'index.html') // or default to index
-  ))
-  }).pipe(res) // stream
 })
 
 Gun({
