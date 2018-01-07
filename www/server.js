@@ -13,5 +13,5 @@ const server = http.createServer(function onRequest (req, res) {
 // Listen
 server.listen(3000)
 
-console.log('www server started on port 3000')
+console.log('authenticated www server started on port 3000')
 console.log('Use CTRL + C to stop it')

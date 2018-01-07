@@ -10,11 +10,11 @@ Clone or download the repo.
 
 cd into directory and run ```npm install```
 
-Now open 4 terminals and follow the instructions
+Now open 3 terminals and follow the instructions
 
 ### Terminal 1
 
-Start the gunserver with restricted put
+Start the gun server with restricted put
 
 ```bash
 $ npm run restricted-put
@@ -24,15 +24,6 @@ This will start the server at localhost port 8000
 
 ### Terminal 2
 
-Setup a tunnel with ngrok
-
-```bash
-$ npm run tunnel
-```
-This will start ngrok and make your localhost:8000 accesible to the world
-
-### Terminal 3
-
 Start the webserver for authenticated site
 
 ```bash
@@ -40,7 +31,7 @@ $ npm start
 ```
 Visit [http://localhost:3000](http://localhost:3000)
 
-### Terminal 4
+### Terminal 3
 
 Start the webserver for authenticated
 
@@ -55,12 +46,12 @@ Everything you write on the authenticated site will be synced to the unathentica
 
 ## Explore more
 
-If you want to se GUN in action without restrictions stop your localhost:8000 and start an unrestricted GUN server.
+If you want to se GUN in action without restrictions stop your localhost:8000 by going to terminal # 1 and pressing CTRL + C.
+Start an unrestricted GUN server.
 
 ```bash
 $ npm run unrestricted
 ```
-
 Now your sync will work both ways.
 
 ## License

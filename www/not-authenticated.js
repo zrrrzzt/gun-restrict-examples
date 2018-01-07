@@ -4,8 +4,7 @@ function init () {
   addListener(document.getElementById('gunForm'), 'submit', addLine)
 }
 
-const gunUrl = `${tunnelUrl}/gun`
-const gun = Gun(gunUrl)
+const gun = Gun('http://localhost:8000/gun')
 
 function addListener (element, type, func) {
   element.removeEventListener(type, func)

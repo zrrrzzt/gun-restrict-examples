@@ -34,12 +34,22 @@ const server = require('http').createServer((req, res) => {
   if (Gun.serve(req, res)) {
     return
   }
+  require('fs').createReadStream(require('path').join(__dirname, req.url)).on('error', function () {
+    res.writeHead(200, {'Content-Type': 'text/html'})
+    res.end(require('fs')
+    .readFileSync(require('path')
+    .join(__dirname, 'index.html')
+  ))
+  }).pipe(res)
 })
 
-Gun({
+const gun = Gun({
   file: 'data.json',
   web: server
 })
+
+// Sync everything
+gun.on('out', {get: {'#': {'*': ''}}})
 
 server.listen(port)
 

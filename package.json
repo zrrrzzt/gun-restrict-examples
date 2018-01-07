@@ -8,7 +8,6 @@
     "restricted-put": "node gun-servers/server-gun-restricted-put",
     "unrestricted": "node gun-servers/server-gun-unrestricted",
     "restricted": "node gun-servers/server-gun-restricted",
-    "tunnel": "node tunnel",
     "start": "node www/server",
     "start-unauth": "node www/server-unauthenticated"
   },
@@ -26,8 +25,8 @@
   "dependencies": {
     "finalhandler": "1.1.0",
     "gun": "0.9.6",
-    "ngrok": "2.2.24",
-    "serve-static": "1.13.1"
+    "serve-static": "1.13.1",
+    "ws": "3.3.2"
   },
   "devDependencies": {
     "standard": "10.0.3"
