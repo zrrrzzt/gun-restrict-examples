@@ -3,9 +3,7 @@
 
 # gun-restrict-examples
 
-Example of how to restrict put with [GUN](https://github.com/amark/gun)
-
-The solutions are based on an answer from [stackoverflow](https://stackoverflow.com/questions/38598391/jwt-authentication-with-gundb)
+Examples of how to restrict writes and still have public reads with [GUN](https://github.com/amark/gun)
 
 ## Setup
 
@@ -13,7 +11,29 @@ Clone or download the repo.
 
 cd into directory and run ```npm install```
 
-## Restricted put example
+## Restricted writes with SEA
+
+Open a terminal and start the services
+
+```bash
+$ npm run sea
+```
+This will start 3 servers
+- The GUN server at localhost port 8000
+- The authenticated site on localhost port 3000
+- The unauthenticated site on localhost port 4000 
+
+Open your browser at [http://localhost:3000](http://localhost:3000)
+
+Use the link to open the unathorized site
+
+### What to expect
+
+Everything you write on the authenticated site will be synced to the unathenticated, but not the other way around.
+
+Shut down the services with `CTRL + C` in the terminal
+
+## Restricted put with token example
 
 Open a terminal and start the services
 
@@ -44,6 +64,10 @@ Start an unrestricted GUN server.
 $ npm run unrestricted
 ```
 Now your sync will work both ways.
+
+## Acknowledgements
+
+The solutions are based on an answer from [stackoverflow](https://stackoverflow.com/questions/38598391/jwt-authentication-with-gundb), the [SEA contact example](https://github.com/amark/gun/blob/master/examples/contact/index.html) and of course the [GUN Gitter](https://gitter.im/amark/gun)
 
 ## License
 

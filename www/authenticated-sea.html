@@ -1,0 +1,22 @@
+<html>
+  <head>
+      <title>GUN restricted SEA</title>
+  </head>
+  <body>
+    <h1>Hello from authenticated with SEA</h1>
+    <div>
+      Visit the unauthed site
+      <p id="unauthed"></p> 
+    </div>
+    <form action="/" id="gunForm">
+      <input type="text" id="gunField">
+    </form>
+    <div>
+      <ul id="gunList"></ul>
+    </div>
+    <script src="http://localhost:8000/gun.js"></script>
+    <script src="http://localhost:8000/gun/lib/cryptomodules.js"></script>
+    <script src="http://localhost:8000/gun/sea.js"></script>
+    <script src="authenticated-sea.js"></script>
+  </body>
+</html>

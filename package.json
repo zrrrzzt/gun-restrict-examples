@@ -6,6 +6,7 @@
   "scripts": {
     "test": "nsp check && standard && ava",
     "unrestricted": "concurrently -k \"node www/server\" \"node gun-servers/server-gun-unrestricted\" \"node www/server 4000 not-authenticated.html\"",
+    "sea": "concurrently -k \"node www/server 3000 authenticated-sea.html\" \"node gun-servers/server-gun-unrestricted\" \"node www/server 4000 not-authenticated-sea.html\"",
     "start": "concurrently -k \"node www/server\" \"node gun-servers/server-gun-restricted-put\" \"node www/server 4000 not-authenticated.html\"",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
   },
