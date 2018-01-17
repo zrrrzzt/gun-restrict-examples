@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/zrrrzzt/gun-restrict-examples.svg?branch=master)](https://travis-ci.org/zrrrzzt/gun-restrict-examples)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+
 # gun-restrict-examples
 
 Example of how to restrict put with [GUN](https://github.com/amark/gun)
