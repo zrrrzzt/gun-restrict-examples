@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/zrrrzzt/gun-restrict-examples.svg?branch=master)](https://travis-ci.org/zrrrzzt/gun-restrict-examples)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+[![Greenkeeper badge](https://badges.greenkeeper.io/zrrrzzt/gun-restrict-examples.svg)](https://greenkeeper.io/)
 
 # gun-restrict-examples
 
