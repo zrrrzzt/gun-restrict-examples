@@ -1,17 +1,16 @@
 <html>
   <head>
       <title>GUN restricted test</title>
-      <script src="https://cdn.jsdelivr.net/npm/gun/gun.js"></script>
   </head>
   <body>
-    <h1>Hello</h1>
+    <h1>Hello from authenticated</h1>
     <form action="/" id="gunForm">
       <input type="text" id="gunField">
     </form>
     <div>
       <ul id="gunList"></ul>
     </div>
-    <script src="tunnel-url.js"></script>
-    <script src="authenticated.js" async defer></script>
+    <script src="http://localhost:8000/gun.js"></script>
+    <script src="authenticated.js"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-const port = process.env.PORT || process.argv[2] || 8000
+const port = 8000
 const Gun = require('gun')
 
 function hasValidToken (msg) {
@@ -16,7 +16,10 @@ Gun.on('opt', function (ctx) {
     // restrict put
     if (msg.put) {
       if (hasValidToken(msg)) {
+        console.log('writing')
         to.next(msg)
+      } else {
+        console.log('not writing')
       }
     } else {
       to.next(msg)
@@ -29,22 +32,24 @@ const server = require('http').createServer((req, res) => {
   if (Gun.serve(req, res)) {
     return
   }
-
-  require('fs').createReadStream(require('path').join(__dirname, req.url)).on('error', function () { // static files!
+  require('fs').createReadStream(require('path').join(__dirname, req.url)).on('error', function () {
     res.writeHead(200, {'Content-Type': 'text/html'})
     res.end(require('fs')
     .readFileSync(require('path')
-    .join(__dirname, 'index.html') // or default to index
+    .join(__dirname, 'index.html')
   ))
-  }).pipe(res) // stream
+  }).pipe(res)
 })
 
-Gun({
+const gun = Gun({
   file: 'data.json',
   web: server
 })
 
+// Sync everything
+gun.on('out', {get: {'#': {'*': ''}}})
+
 server.listen(port)
 
-console.log('Server started on port ' + port + ' with /gun')
+console.log('GUN server (restricted put) started on port 8000')
 console.log('Use CTRL + C to stop it')
