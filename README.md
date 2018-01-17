@@ -19,6 +19,7 @@ Open a terminal and start the services
 ```bash
 $ npm run sea
 ```
+
 This will start 3 servers
 - The GUN server at localhost port 8000
 - The authenticated site on localhost port 3000
