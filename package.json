@@ -9,7 +9,8 @@
     "unrestricted": "node gun-servers/server-gun-unrestricted",
     "restricted": "node gun-servers/server-gun-restricted",
     "start": "node www/server",
-    "start-unauth": "node www/server-unauthenticated"
+    "start-unauth": "node www/server-unauthenticated",
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
   },
   "standard": {
     "ignore": [
@@ -29,9 +30,8 @@
   "homepage": "https://github.com/zrrrzzt/gun-restrict-examples#readme",
   "dependencies": {
     "finalhandler": "1.1.0",
-    "gun": "0.9.6",
-    "serve-static": "1.13.1",
-    "ws": "3.3.2"
+    "gun": "0.9.8",
+    "serve-static": "1.13.1"
   },
   "devDependencies": {
     "ava": "0.24.0",
