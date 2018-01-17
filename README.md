@@ -27,6 +27,10 @@ This will start 3 servers
 
 Open your browser at [http://localhost:3000](http://localhost:3000)
 
+Login with whatever username/password you want. If the user doesn't exist it will be created.
+
+Add some messages
+
 Use the link to open the unathorized site
 
 ### What to expect

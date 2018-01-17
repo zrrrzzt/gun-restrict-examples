@@ -1,17 +1,57 @@
 localStorage.clear()
 
 function init () {
+  addListener(document.getElementById('loginForm'), 'submit', doLogin)
   addListener(document.getElementById('gunForm'), 'submit', addLine)
+  addListener(document.getElementById('logoutButton'), 'click', doLogout)
 }
 
 const gun = Gun(`http://localhost:8000/gun`)
 const user = gun.user()
 
-user.create('alice', 'asdf', login)
+function hideLogin () {
+  const login = document.getElementById('loginWrapper')
+  const authed = document.getElementById('authed')
+  const userField = document.getElementById('userField')
+  const passField = document.getElementById('passField')
+  userField.value = ''
+  passField.value = ''
+  login.style.visibility = 'hidden'
+  authed.style.visibility = ''
+}
 
-function login(ack){
+function doLogin (e) {
+  e.preventDefault()
+  const userField = document.getElementById('userField')
+  const passField = document.getElementById('passField')
+  user.auth(userField.value, passField.value, data => {
+    if (data.err && /No user/.test(data.err) === true) {
+      console.log('creating user')
+      user.create(userField.value, passField.value, ack => {
+        if (ack.err) {
+          return
+        }
+        login({user: userField.value, pass: passField.value})
+      })
+    } else {
+      write(data)
+    }
+  })
+}
+
+function doLogout (e) {
+  e.preventDefault()
+  user.leave()
+  const login = document.getElementById('loginWrapper')
+  const authed = document.getElementById('authed')
+  login.style.visibility = ''
+  authed.style.visibility = 'hidden'
+  localStorage.clear()
+}
+
+function login (data) {
 	console.log("login...")
-	user.auth('alice', 'asdf', write)
+	user.auth(data.user, data.pass, write)
 }
 
 function write (data) {
@@ -21,7 +61,7 @@ function write (data) {
 
 function generateUnauthLink (key) {
   const p = document.getElementById('unauthed')
-  p.innerHTML = `<a href="http://localhost:4000?key=${key}" target="_blank">press me</a>`
+  p.innerHTML = `<a href="http://localhost:4000?key=${key}" target="_blank">Visit the unathenticated site</a>`
 }
 
 function addListener (element, type, func) {
@@ -54,6 +94,7 @@ function updateLines () {
 
 gun.on('auth', () => {
   updateLines()
+  hideLogin()
 })
 
 function ready (fn) {

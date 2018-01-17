@@ -69,3 +69,8 @@ typings/
 
 # Lock files
 package-lock.json
+
+# gun/sea
+.localStorage
+.sessionStorage
+key_storage

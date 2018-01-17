@@ -4,15 +4,24 @@
   </head>
   <body>
     <h1>Hello from authenticated with SEA</h1>
-    <div>
-      Visit the unauthed site
-      <p id="unauthed"></p> 
+    <div id="loginWrapper">
+      <form action="/" id="loginForm">
+        <input type="text" name="username" id="userField" placeholder="Username"><br />
+        <input type="password" name="password" id="passField" placeholder="Password"><br />
+        <button type="submit">Login</button>
+      </form>
     </div>
-    <form action="/" id="gunForm">
-      <input type="text" id="gunField">
-    </form>
-    <div>
-      <ul id="gunList"></ul>
+    <div id="authed" style="visibility: hidden;">
+      <button id="logoutButton">Log out</button>
+      <div>
+        <p id="unauthed"></p> 
+      </div>
+      <form action="/" id="gunForm">
+        <input type="text" id="gunField" placeholder="message">
+      </form>
+      <div>
+        <ul id="gunList"></ul>
+      </div>
     </div>
     <script src="http://localhost:8000/gun.js"></script>
     <script src="http://localhost:8000/gun/lib/cryptomodules.js"></script>
