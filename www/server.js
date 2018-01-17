@@ -1,9 +1,10 @@
 const finalhandler = require('finalhandler')
 const http = require('http')
 const serveStatic = require('serve-static')
-
+const port = process.argv[2] || 3000
+const index = process.argv[3] || 'authenticated.html'
 // Serve up public/ftp folder
-const serve = serveStatic('www', {'index': ['index.html', 'index.htm']})
+const serve = serveStatic('www', {'index': [index]})
 
 // Create server
 const server = http.createServer(function onRequest (req, res) {
@@ -11,7 +12,7 @@ const server = http.createServer(function onRequest (req, res) {
 })
 
 // Listen
-server.listen(3000)
+server.listen(port)
 
-console.log('authenticated www server started on port 3000')
+console.log(`server started on port: ${port}`)
 console.log('Use CTRL + C to stop it')

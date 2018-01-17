@@ -9,7 +9,7 @@
     "unrestricted": "node gun-servers/server-gun-unrestricted",
     "restricted": "node gun-servers/server-gun-restricted",
     "start": "node www/server",
-    "start-unauth": "node www/server-unauthenticated",
+    "start-unauth": "node www/server 4000 not-authenticated.html",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
   },
   "standard": {
