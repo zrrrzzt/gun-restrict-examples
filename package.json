@@ -4,12 +4,17 @@
   "description": "Examples of how to restrict put and get with GUN",
   "main": "index.js",
   "scripts": {
-    "test": "standard",
+    "test": "nsp check && standard && ava",
     "restricted-put": "node gun-servers/server-gun-restricted-put",
     "unrestricted": "node gun-servers/server-gun-unrestricted",
     "restricted": "node gun-servers/server-gun-restricted",
     "start": "node www/server",
     "start-unauth": "node www/server-unauthenticated"
+  },
+  "standard": {
+    "ignore": [
+      "www"
+    ]
   },
   "repository": {
     "type": "git",
@@ -29,6 +34,8 @@
     "ws": "3.3.2"
   },
   "devDependencies": {
+    "ava": "0.24.0",
+    "nsp": "3.1.0",
     "standard": "10.0.3"
   }
 }
