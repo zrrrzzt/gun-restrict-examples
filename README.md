@@ -1,6 +1,6 @@
 # gun-restrict-examples
 
-Examples of how to restrict put and get with [GUN](https://github.com/amark/gun)
+Example of how to restrict put with [GUN](https://github.com/amark/gun)
 
 The solutions are based on an answer from [stackoverflow](https://stackoverflow.com/questions/38598391/jwt-authentication-with-gundb)
 
@@ -10,43 +10,31 @@ Clone or download the repo.
 
 cd into directory and run ```npm install```
 
-Now open 3 terminals and follow the instructions
+## Restricted put example
 
-### Terminal 1
-
-Start the gun server with restricted put
-
-```bash
-$ npm run restricted-put
-```
-
-This will start the server at localhost port 8000
-
-### Terminal 2
-
-Start the webserver for authenticated site
+Open a terminal and start the services
 
 ```bash
 $ npm start
 ```
-Visit [http://localhost:3000](http://localhost:3000)
 
-### Terminal 3
+This will start 3 servers
+- The GUN server at localhost port 8000
+- The authenticated site on localhost port 3000
+- The unauthenticated site on localhost port 4000 
 
-Start the webserver for authenticated
+Open 2 browsers.
+- Visit [http://localhost:3000](http://localhost:3000) in one
+- Visit [http://localhost:4000](http://localhost:4000) in the other
 
-```bash
-$ npm run start-unauth
-```
-Visit [http://localhost:4000](http://localhost:4000) in another browser
-
-## What to expect
+### What to expect
 
 Everything you write on the authenticated site will be synced to the unathenticated, but not the other way around.
 
 ## Explore more
 
-If you want to se GUN in action without restrictions stop your localhost:8000 by going to terminal # 1 and pressing CTRL + C.
+If you want to se GUN in action without restrictions stop the running service pressing CTRL + C in the terminal.
+
 Start an unrestricted GUN server.
 
 ```bash

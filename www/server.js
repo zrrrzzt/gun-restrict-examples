@@ -14,5 +14,4 @@ const server = http.createServer(function onRequest (req, res) {
 // Listen
 server.listen(port)
 
-console.log(`server started on port: ${port}`)
-console.log('Use CTRL + C to stop it')
+console.log(`www server started on port: ${port} - ${index}`)

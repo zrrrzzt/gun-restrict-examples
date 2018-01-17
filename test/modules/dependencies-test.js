@@ -1,7 +1,7 @@
 const test = require('ava')
 const pkg = require('../../package.json')
 const dependencies = pkg.dependencies || {}
-const dropModules = ['gun']
+const dropModules = ['gun', 'concurrently']
 const isDropped = (module) => !dropModules.includes(module)
 
 if (Object.keys(dependencies).length > 0) {

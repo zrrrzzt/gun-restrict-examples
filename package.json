@@ -5,11 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "nsp check && standard && ava",
-    "restricted-put": "node gun-servers/server-gun-restricted-put",
-    "unrestricted": "node gun-servers/server-gun-unrestricted",
-    "restricted": "node gun-servers/server-gun-restricted",
-    "start": "node www/server",
-    "start-unauth": "node www/server 4000 not-authenticated.html",
+    "unrestricted": "concurrently -k \"node www/server\" \"node gun-servers/server-gun-unrestricted\" \"node www/server 4000 not-authenticated.html\"",
+    "start": "concurrently -k \"node www/server\" \"node gun-servers/server-gun-restricted-put\" \"node www/server 4000 not-authenticated.html\"",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
   },
   "standard": {
@@ -29,6 +26,7 @@
   },
   "homepage": "https://github.com/zrrrzzt/gun-restrict-examples#readme",
   "dependencies": {
+    "concurrently": "3.5.1",
     "finalhandler": "1.1.0",
     "gun": "0.9.8",
     "serve-static": "1.13.1"

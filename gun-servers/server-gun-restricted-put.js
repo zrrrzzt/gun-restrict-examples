@@ -51,5 +51,5 @@ gun.on('out', {get: {'#': {'*': ''}}})
 
 server.listen(port)
 
-console.log('Server started on port 8000')
+console.log('GUN server (restricted put) started on port 8000')
 console.log('Use CTRL + C to stop it')
