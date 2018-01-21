@@ -74,3 +74,4 @@ package-lock.json
 .localStorage
 .sessionStorage
 key_storage
+data.json
