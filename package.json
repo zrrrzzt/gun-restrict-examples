@@ -1,6 +1,6 @@
 {
   "name": "gun-restrict-examples",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Examples of how to restrict put and get with GUN",
   "main": "index.js",
   "scripts": {
