@@ -33,7 +33,7 @@
     "serve-static": "1.13.1"
   },
   "devDependencies": {
-    "ava": "0.24.0",
+    "ava": "0.25.0",
     "nsp": "3.1.0",
     "standard": "10.0.3"
   }
