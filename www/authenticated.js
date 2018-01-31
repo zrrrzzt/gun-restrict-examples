@@ -28,7 +28,7 @@ function addListener (element, type, func) {
 function addLine (e) {
   e.preventDefault()
   const field = document.getElementById('gunField')
-  gun.get('lines').put({myVal: field.value})
+  gun.get('lines').set(field.value)
   field.value = ''
 }
 
