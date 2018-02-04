@@ -1,0 +1,16 @@
+body {
+  text-align: center;
+  font-size: 20px;
+}
+
+input {
+  width: 350px;
+  height: 40px;
+  margin: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
