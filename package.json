@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/zrrrzzt/gun-restrict-examples#readme",
   "dependencies": {
-    "concurrently": "3.6.1",
+    "concurrently": "4.0.1",
     "finalhandler": "1.1.1",
     "gun": "0.9.9998",
     "serve-static": "1.13.2"
