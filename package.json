@@ -3,8 +3,9 @@
   "version": "1.2.4",
   "description": "Examples of how to restrict put and get with GUN",
   "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "nsp check && standard && ava",
+    "test": "standard && ava",
     "unrestricted": "concurrently -k \"node www/server\" \"node gun-servers/server-gun-unrestricted\" \"node www/server 4000 not-authenticated.html\"",
     "sea": "concurrently -k \"node www/server 3000 authenticated-sea.html\" \"node gun-servers/server-gun-unrestricted\" \"node www/server 4000 not-authenticated-sea.html\"",
     "start": "concurrently -k \"node www/server\" \"node gun-servers/server-gun-restricted-put\" \"node www/server 4000 not-authenticated.html\"",
@@ -34,7 +35,6 @@
   },
   "devDependencies": {
     "ava": "0.25.0",
-    "nsp": "3.2.1",
     "standard": "12.0.1"
   }
 }
