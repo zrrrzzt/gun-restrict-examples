@@ -33,11 +33,11 @@ const server = require('http').createServer((req, res) => {
     return
   }
   require('fs').createReadStream(require('path').join(__dirname, req.url)).on('error', function () {
-    res.writeHead(200, {'Content-Type': 'text/html'})
+    res.writeHead(200, { 'Content-Type': 'text/html' })
     res.end(require('fs')
-    .readFileSync(require('path')
-    .join(__dirname, 'index.html')
-  ))
+      .readFileSync(require('path')
+        .join(__dirname, 'index.html')
+      ))
   }).pipe(res)
 })
 
@@ -47,7 +47,7 @@ const gun = Gun({
 })
 
 // Sync everything
-gun.on('out', {get: {'#': {'*': ''}}})
+gun.on('out', { get: { '#': { '*': '' } } })
 
 server.listen(port)
 
