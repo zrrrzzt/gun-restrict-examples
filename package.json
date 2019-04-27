@@ -31,7 +31,7 @@
   "dependencies": {
     "concurrently": "4.1.0",
     "finalhandler": "1.1.1",
-    "gun": "0.2019.422",
+    "gun": "0.2019.426",
     "serve-static": "1.13.2"
   },
   "devDependencies": {
