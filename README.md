@@ -6,6 +6,12 @@
 
 Examples of how to restrict writes and still have public reads with [GUN](https://github.com/amark/gun)
 
+# NOT UPDATED
+
+This is a bit out of sync at the moment. Maybe I'll fix it some day...
+
+Use at your own risk :-)
+
 ## Setup
 
 Clone or download the repo.
