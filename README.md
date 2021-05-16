@@ -78,5 +78,3 @@ The solutions are based on an answer from [stackoverflow](https://stackoverflow.
 ## License
 
 [MIT](LICENSE)
-
-![Robohash image of gun-restrict-examples](https://robots.kebabstudios.party/gun-restrict-examples.png "Robohash image of gun-restrict-examples")
