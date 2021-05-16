@@ -12,7 +12,7 @@ Gun.on('opt', function (ctx) {
   }
   // Check all incoming traffic
   ctx.on('in', function (msg) {
-    var to = this.to
+    const to = this.to
     // restrict put
     if (msg.put) {
       if (hasValidToken(msg)) {
@@ -27,7 +27,7 @@ Gun.on('opt', function (ctx) {
   })
 })
 
-const server = require('http').createServer(Gun.serve(__dirname));
+const server = require('http').createServer(Gun.serve(__dirname))
 
 const gun = Gun({
   file: 'data.json',
